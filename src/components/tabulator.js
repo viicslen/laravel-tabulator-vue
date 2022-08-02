@@ -274,13 +274,12 @@ export default function useTabulator(settings) {
                     dataType: 'json',
                     url: persistenceUrl,
                     success: ({type, data}) => {
+                        persistenceData = type === 'filter' ? data?.filters : data;
+
                         if (type === 'filter') {
-                            const headerFilters = data.headerFilters ? data.headerFilters : [];
+                            const headerFilters = data?.headerFilters ?? [];
 
                             headerFilters.forEach(({field, value}) => this.table.setHeaderFilterValue(field, value));
-                            persistenceData = data.filters ? data.filters : null;
-                        } else {
-                            persistenceData = data;
                         }
                     }
                 });

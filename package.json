@@ -1,7 +1,7 @@
 {
     "name": "laravel-tabulator-vue",
     "packageManager": "yarn@3.2.1",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "files": [
         "dist"
     ],
@@ -16,8 +16,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "serve": "vite preview",
-        "publish": "npm publish"
+        "serve": "vite preview"
     },
     "dependencies": {
         "@babel/parser": "^7.18.10",
