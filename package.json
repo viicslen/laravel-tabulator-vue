@@ -1,7 +1,7 @@
 {
     "name": "laravel-tabulator-vue",
     "packageManager": "yarn@3.2.1",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "files": [
         "dist"
     ],
@@ -19,6 +19,7 @@
         "serve": "vite preview"
     },
     "dependencies": {
+        "@babel/parser": "^7.18.10",
         "jquery": "^3.6.0",
         "lodash": "^4.17.21",
         "redom": "^3.29.0",
@@ -27,7 +28,6 @@
         "vue": "^2.7.8"
     },
     "devDependencies": {
-        "@babel/parser": "^7.18.10",
         "@vitejs/plugin-vue2": "^1.1.2",
         "postcss": "^8.4.14",
         "vite": "^3.0.4"
