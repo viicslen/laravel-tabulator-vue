@@ -1,7 +1,17 @@
 import {TabulatorFull as Tabulator} from "tabulator-tables";
 import {el} from "redom";
-import {debounce, defaults, pick, mapValues} from "lodash";
 import JQuery from "jquery";
+import {
+    pick,
+    defaults,
+    startCase,
+    lowerCase,
+    upperCase,
+    kebabCase,
+    snakeCase,
+    debounce,
+    mapValues,
+} from "lodash";
 
 export default function useTabulator(settings) {
     Tabulator.extendModule("format", "formatters", {
@@ -77,6 +87,24 @@ export default function useTabulator(settings) {
                 value = cell.getValue();
 
             return Array.isArray(value) ? value.join(params.separator) : value;
+        },
+        startCase: function(cell, formatterParams) {
+            const value = cell.getValue(),
+                options = defaults(formatterParams, { lower: true });
+
+            return startCase(options.lower ? lowerCase(value) : value);
+        },
+        lowerCase: function(cell, formatterParams) {
+            return lowerCase(cell.getValue());
+        },
+        upperCase: function(cell, formatterParams) {
+            return upperCase(cell.getValue());
+        },
+        kebabCase: function(cell, formatterParams) {
+            return kebabCase(cell.getValue());
+        },
+        snakeCase: function(cell, formatterParams) {
+            return snakeCase(cell.getValue());
         },
     });
 
