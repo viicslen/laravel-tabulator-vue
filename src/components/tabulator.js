@@ -237,7 +237,7 @@ export default function useTabulator(settings) {
         },
     });
 
-    if (settings?.persistance?.hasOwnProperty('saveUrl')) {
+    if (settings?.persistence?.hasOwnProperty('saveUrl')) {
         Tabulator.extendModule("persistence", "writers", {
             remote: function(id, type, data) {
                 const persistenceUrl = settings.persistence.saveUrl instanceof Function
@@ -260,7 +260,7 @@ export default function useTabulator(settings) {
         });
     }
 
-    if (settings?.persistance?.hasOwnProperty('loadUrl')) {
+    if (settings?.persistence?.hasOwnProperty('loadUrl')) {
         Tabulator.extendModule("persistence", "readers", {
             remote: function (id, type) {
                 const persistenceUrl = settings.persistence.loadUrl instanceof Function
