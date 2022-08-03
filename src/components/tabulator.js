@@ -13,7 +13,7 @@ import {
     mapValues,
 } from "lodash";
 
-export default function useTabulator(settings) {
+export default function useTabulator(config) {
     Tabulator.extendModule("format", "formatters", {
         actions: function(cell, formatterParams) {
             const data = cell.getData(),
@@ -237,12 +237,28 @@ export default function useTabulator(settings) {
         },
     });
 
-    if (settings?.persistence?.hasOwnProperty('saveUrl')) {
+    if (config?.extend && typeof config.extend === 'function') {
+        config.extend(Tabulator);
+    }
+
+    if (config?.modules) {
+        for (const name in config.modules) {
+            for (const property in config.modules[name]) {
+                if (! config.modules[name][property]) {
+                    continue;
+                }
+
+                Tabulator.extendModule(name, property, config.modules[name][property]);
+            }
+        }
+    }
+
+    if (config?.persistence?.hasOwnProperty('saveUrl')) {
         Tabulator.extendModule("persistence", "writers", {
             remote: function(id, type, data) {
-                const persistenceUrl = settings.persistence.saveUrl instanceof Function
-                    ? settings.persistence.saveUrl(id, type, data)
-                    : settings.persistence.saveUrl;
+                const persistenceUrl = config.persistence.saveUrl instanceof Function
+                    ? config.persistence.saveUrl(id, type, data)
+                    : config.persistence.saveUrl;
 
                 if (type === 'filter') {
                     data = {
@@ -260,12 +276,12 @@ export default function useTabulator(settings) {
         });
     }
 
-    if (settings?.persistence?.hasOwnProperty('loadUrl')) {
+    if (config?.persistence?.hasOwnProperty('loadUrl')) {
         Tabulator.extendModule("persistence", "readers", {
             remote: function (id, type) {
-                const persistenceUrl = settings.persistence.loadUrl instanceof Function
-                    ? settings.persistence.loadUrl(id, type)
-                    : settings.persistence.loadUrl;
+                const persistenceUrl = config.persistence.loadUrl instanceof Function
+                    ? config.persistence.loadUrl(id, type)
+                    : config.persistence.loadUrl;
 
                 let persistenceData = null;
 
