@@ -24,7 +24,7 @@ export default {
             required: false,
             default: () => ({})
         },
-        settings: {
+        config: {
             type: Object,
             required: false,
             default: () => ({}),
@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         initTable() {
-            const {Tabulator} = useTabulator(this.settings),
+            const {Tabulator} = useTabulator(this.config),
                 options = parseFunctionsInObject(defaults(
                     { reactiveData: this.data && this.data.length > 0 },
                     this.options,
