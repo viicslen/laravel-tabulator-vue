@@ -60,13 +60,13 @@ export default function useTabulator(config) {
             return el('div', { class: 'btn-group' }, buttons);
         },
         image: function(cell, formatterParams) {
-            const value = defaults(formatterParams.url, cell.getValue()),
-                urlPrefix = defaults(formatterParams.urlPrefix, ''),
-                urlSuffix = defaults(formatterParams.urlSuffix, ''),
+            const value = formatterParams.url ?? cell.getValue(),
+                urlPrefix = formatterParams.urlPrefix ?? '',
+                urlSuffix = formatterParams.urlSuffix ?? '',
                 urlBody = typeof value === 'function' ? value(cell.getValue(), cell.getData()) : value,
                 fullUrl = `${urlPrefix}${urlBody}${urlSuffix}`,
                 options = defaults({
-                    alt: defaults(cell.getField(), 'Image'),
+                    alt: cell.getField() ?? 'Image',
                     src: fullUrl,
                 }, pick(formatterParams, [
                     'width',
