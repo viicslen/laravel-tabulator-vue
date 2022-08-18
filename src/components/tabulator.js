@@ -59,6 +59,24 @@ export default function useTabulator(config) {
 
             return el('div', { class: 'btn-group' }, buttons);
         },
+        link: function(cell, formatterParams) {
+            const value = formatterParams.url ?? cell.getValue(),
+                urlPrefix = formatterParams.urlPrefix ?? '',
+                urlSuffix = formatterParams.urlSuffix ?? '',
+                urlBody = typeof value === 'function' ? value(cell.getValue(), cell.getData()) : value,
+                fullUrl = `${urlPrefix}${urlBody}${urlSuffix}`,
+                options = defaults(
+                    { href: fullUrl }, 
+                    pick(formatterParams, [ 'target', 'class', 'style' ]), 
+                    { target: '_blank' }
+                );
+
+            if (! urlBody) {
+                return '';
+            }
+
+            return el('a', options);
+        },
         image: function(cell, formatterParams) {
             const value = formatterParams.url ?? cell.getValue(),
                 urlPrefix = formatterParams.urlPrefix ?? '',
