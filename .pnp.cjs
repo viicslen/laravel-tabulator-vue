@@ -33,15 +33,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@babel/parser", "npm:7.18.10"],\
+            ["@babel/parser", "npm:7.18.11"],\
             ["@vitejs/plugin-vue2", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:1.1.2"],\
             ["jquery", "npm:3.6.0"],\
             ["lodash", "npm:4.17.21"],\
-            ["postcss", "npm:8.4.14"],\
+            ["postcss", "npm:8.4.16"],\
             ["redom", "npm:3.29.0"],\
             ["tabulator-tables", "npm:5.3.1"],\
             ["uuid", "npm:8.3.2"],\
-            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.4"],\
+            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.8"],\
             ["vue", "npm:2.7.8"]\
           ],\
           "linkType": "SOFT"\
@@ -61,6 +61,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@babel-parser-npm-7.18.10-1041fabac4-adf417dacc.zip/node_modules/@babel/parser/",\
           "packageDependencies": [\
             ["@babel/parser", "npm:7.18.10"],\
+            ["@babel/types", "npm:7.18.7"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.18.11", {\
+          "packageLocation": "./.yarn/cache/@babel-parser-npm-7.18.11-a2b80029aa-5ecc75b83e.zip/node_modules/@babel/parser/",\
+          "packageDependencies": [\
+            ["@babel/parser", "npm:7.18.11"],\
             ["@babel/types", "npm:7.18.7"]\
           ],\
           "linkType": "HARD"\
@@ -131,7 +139,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-vue2", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:1.1.2"],\
             ["@types/vite", null],\
             ["@types/vue", null],\
-            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.4"],\
+            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.8"],\
             ["vue", "npm:2.7.8"]\
           ],\
           "packagePeers": [\
@@ -891,15 +899,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["laravel-tabulator-vue", "workspace:."],\
-            ["@babel/parser", "npm:7.18.10"],\
+            ["@babel/parser", "npm:7.18.11"],\
             ["@vitejs/plugin-vue2", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:1.1.2"],\
             ["jquery", "npm:3.6.0"],\
             ["lodash", "npm:4.17.21"],\
-            ["postcss", "npm:8.4.14"],\
+            ["postcss", "npm:8.4.16"],\
             ["redom", "npm:3.29.0"],\
             ["tabulator-tables", "npm:5.3.1"],\
             ["uuid", "npm:8.3.2"],\
-            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.4"],\
+            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.8"],\
             ["vue", "npm:2.7.8"]\
           ],\
           "linkType": "SOFT"\
@@ -1190,6 +1198,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-js", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:8.4.16", {\
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.16-7367383579-10eee25efd.zip/node_modules/postcss/",\
+          "packageDependencies": [\
+            ["postcss", "npm:8.4.16"],\
+            ["nanoid", "npm:3.3.4"],\
+            ["picocolors", "npm:1.0.0"],\
+            ["source-map-js", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["promise-inflight", [\
@@ -1278,10 +1296,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["rollup", [\
-        ["npm:2.77.2", {\
-          "packageLocation": "./.yarn/cache/rollup-npm-2.77.2-71ff03fa85-5a84fb98a6.zip/node_modules/rollup/",\
+        ["npm:2.77.3", {\
+          "packageLocation": "./.yarn/cache/rollup-npm-2.77.3-be523d3443-b179c68249.zip/node_modules/rollup/",\
           "packageDependencies": [\
-            ["rollup", "npm:2.77.2"],\
+            ["rollup", "npm:2.77.3"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"]\
           ],\
           "linkType": "HARD"\
@@ -1506,17 +1524,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["vite", [\
-        ["npm:3.0.4", {\
-          "packageLocation": "./.yarn/cache/vite-npm-3.0.4-273d34b0af-f13eceb94f.zip/node_modules/vite/",\
+        ["npm:3.0.8", {\
+          "packageLocation": "./.yarn/cache/vite-npm-3.0.8-cf480b5a77-ec3f57d52f.zip/node_modules/vite/",\
           "packageDependencies": [\
-            ["vite", "npm:3.0.4"]\
+            ["vite", "npm:3.0.8"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.4", {\
-          "packageLocation": "./.yarn/__virtual__/vite-virtual-6bbfdddf52/0/cache/vite-npm-3.0.4-273d34b0af-f13eceb94f.zip/node_modules/vite/",\
+        ["virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.8", {\
+          "packageLocation": "./.yarn/__virtual__/vite-virtual-ba6f36bcf0/0/cache/vite-npm-3.0.8-cf480b5a77-ec3f57d52f.zip/node_modules/vite/",\
           "packageDependencies": [\
-            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.4"],\
+            ["vite", "virtual:669f2d32fe5e19a620b15d51d7a2a9b13095e72bad14055a0eaa220ba408d70b32b8fe3a196e4d8e25146a2c50ce7bc37b96fee8ee153ff5c051ac75b96a57fb#npm:3.0.8"],\
             ["@types/less", null],\
             ["@types/sass", null],\
             ["@types/stylus", null],\
@@ -1524,9 +1542,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["esbuild", "npm:0.14.51"],\
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"],\
             ["less", null],\
-            ["postcss", "npm:8.4.14"],\
+            ["postcss", "npm:8.4.16"],\
             ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"],\
-            ["rollup", "npm:2.77.2"],\
+            ["rollup", "npm:2.77.3"],\
             ["sass", null],\
             ["stylus", null],\
             ["terser", null]\
