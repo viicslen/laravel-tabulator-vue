@@ -65,6 +65,7 @@ export default function useTabulator(config) {
                 urlSuffix = formatterParams.suffix ?? '',
                 urlBody = typeof value === 'function' ? value(cell.getValue(), cell.getData()) : value,
                 fullUrl = `${urlPrefix}${urlBody}${urlSuffix}`,
+                text = formatterParams.text ?? value,
                 options = defaults(
                     { href: fullUrl }, 
                     pick(formatterParams, [ 'target', 'class', 'style' ]), 
@@ -72,10 +73,10 @@ export default function useTabulator(config) {
                 );
 
             if (! urlBody) {
-                return '';
+                return text;
             }
 
-            return el('a', options);
+            return el('a', options, text);
         },
         image: function(cell, formatterParams) {
             const value = formatterParams.url ?? cell.getValue(),
