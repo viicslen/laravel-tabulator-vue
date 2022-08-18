@@ -61,8 +61,8 @@ export default function useTabulator(config) {
         },
         link: function(cell, formatterParams) {
             const value = formatterParams.url ?? cell.getValue(),
-                urlPrefix = formatterParams.urlPrefix ?? '',
-                urlSuffix = formatterParams.urlSuffix ?? '',
+                urlPrefix = formatterParams.prefix ?? '',
+                urlSuffix = formatterParams.suffix ?? '',
                 urlBody = typeof value === 'function' ? value(cell.getValue(), cell.getData()) : value,
                 fullUrl = `${urlPrefix}${urlBody}${urlSuffix}`,
                 options = defaults(
