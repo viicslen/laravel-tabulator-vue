@@ -23,7 +23,7 @@ export default function useTabulator(config) {
                 return el('a', {
                     class: defaultClass,
                     href: window.location + '/' + data.id,
-                }, 'View')
+                }, 'View');
             }
 
             const buttons = formatterParams
@@ -253,6 +253,36 @@ export default function useTabulator(config) {
                 select,
                 input
             ]);
+        },
+    });
+
+    Tabulator.extendModule("persistence", "writers", {
+        local: function(id, type, data) {
+            if (type === 'filter') {
+                data = {
+                    headerFilters: this.table.getHeaderFilters(),
+                    filters: data,
+                };
+            }
+
+		    localStorage.setItem(id + "-" + type, JSON.stringify(data));
+        },
+    });
+
+    Tabulator.extendModule("persistence", "readers", {
+        local: function (id, type) {
+            const data = localStorage.getItem(id + "-" + type),
+                parsed = data ? JSON.parse(data) : false;
+
+            if (type === 'filter' && parsed) {
+                const headerFilters = parsed.headerFilters ?? [];
+
+                headerFilters.forEach(({field, value}) => this.table.setHeaderFilterValue(field, value));
+
+                return parsed.filters ?? false;
+            }
+
+            return parsed;
         },
     });
 
